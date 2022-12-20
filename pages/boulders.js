@@ -91,7 +91,7 @@ export async function getStaticProps(context) {
         projectId: 'l3anu4mj',
         dataset: 'production',
         apiVersion: '2021-10-21',
-        useCdn: false,
+        useCdn: true,
     })
     const query = '*[_type == "boulder"]{..., area->, "imageUrl": image.asset->url}'
     var boulders = await client.fetch(query) 
