@@ -25,9 +25,13 @@ export default function Home() {
               <Hero />
               <div id="CTA-container" className="flex flex-col space-y-8 mt-12 items-center w-full">
               <div className="flex flex-col items-center" >
+                  <a href="/boulders" className="rounded-md border border-slate-700 px-4 py-2 w-48 text-center text-slate-300 bg-slate-800 hover:shadow-md">Featured Boulders</a>
+                  <p className="text-gray-500 ">What I've climbed and my consensus</p>
+              </div>                                                                    
+              <div className="flex flex-col items-center" >
                   <a href="/blog" className="rounded-md border border-slate-700 px-4 py-2 w-48 text-center text-slate-300 bg-slate-800 hover:shadow-md">Blog</a>
                   <p className="text-gray-500 ">Expanded and freeform thoughts</p>
-              </div>                                                                    
+              </div>      
               </div>
               <div className="my-6 px-6 max-w-3xl space-y-4">
                   <p className="text-zinc-700">"Ever since I began cutting my teeth on Mt. Lemmon in Southern Arizona, looking for and developing boulders,

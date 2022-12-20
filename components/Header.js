@@ -18,6 +18,9 @@ return(
             <Link href="/about">
                 <a className="px-3 py-1 hover:text-primary-900 hover:underline underline-offset-8 decoration-accent-900">About</a>
             </Link>
+            <Link href="/boulders">
+            <a className="px-3 py-1 hover:text-primary-900 hover:underline underline-offset-8 decoration-accent-900">Boulders</a>
+            </Link>
         </section>
         </div>
 )
