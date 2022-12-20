@@ -69,7 +69,7 @@ export default function Boulders({boulders}) {
                                                     <div className="">
                                                         <PortableText value={boulder?.summary} />
                                                     </div>
-                                                    <YouTubeEmbed embedUrl={boulder?.video.split("=")[1]}/>
+                                                    <YouTubeEmbed embedUrl={boulder?.video?.split("=")[1]}/>
                                                 </Disclosure.Panel>
                                             </>
                                         )}
