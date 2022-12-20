@@ -39,16 +39,16 @@ export default function Home() {
               </div>      
               </div>
               <div className="my-6 px-6 max-w-3xl space-y-4">
-                  <p className="text-zinc-700">"Ever since I began cutting my teeth on Mt. Lemmon in Southern Arizona, looking for and developing boulders,
+                  <p className="text-zinc-700">Ever since I began cutting my teeth on Mt. Lemmon in Southern Arizona, looking for and developing boulders,
                       I&apos;ve developed an appreciation for just how rare some boulders really are.<br/> <br/> These rare, usually &apos;four star&apos; boulders are not four times better than one star boulders, but maybe 10 or 100 times better. It has become my mission to seek out these boulders, which I have come to call collectors edition.</p>
                       
-                  <p className="text-zinc-700">Seeking out what I deemed to be collectors edition has led me over many miles.  Here I reflect and share about these adventures, which are now mostly based around the greater Tahoe area."
+                  <p className="text-zinc-700">Seeking out what I deemed to be collectors edition has led me over many miles.  Here I reflect and share about these adventures, which are now mostly based around the greater Tahoe area.
                   </p>
               </div>
               <Container>
                   <h3 className="text-2xl text-center">What makes a collectors edition boulder?</h3>
                   {criteria.map((c) => (
-                      <div className="flex items-center space-x-6 h-24 m-4 bg-slate-50 rounded-xl px-4">
+                      <div key={c.name} className="flex items-center space-x-6 h-24 m-4 bg-slate-50 rounded-xl px-4">
                           <CheckBadgeIcon className="text-slate-800 h-8 w-8 flex-none bg-yellow-400 rounded-xl"/>
                           <div>
                             <h4 className="text-slate-700 font-medium">{c.name}</h4>
