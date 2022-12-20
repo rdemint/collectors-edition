@@ -1,8 +1,8 @@
-import {Fragment} from 'react'
+import {Fragment, useState} from 'react'
 import Link from 'next/link'
-import {Popover, Transition} from '@headlessui/react'
+import {Popover, Dialog, Transition} from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon } from '@heroicons/react/24/solid'
+import { Bars3Icon, XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 
 
 const boulderLists = [
@@ -15,6 +15,7 @@ function classNames(...classes) {
   }
 
 export default function Header() {
+    const [sidebarOpen, setSidebarOpen] = useState(false)
 
 return(
     <div className="flex shadow-lg items-center justify-between p-6">
@@ -77,43 +78,76 @@ return(
                 </Link>
             </section>
         </section>
-        <section id="mobile-menu" className='md:hidden'>
-                <Popover className="relative">
-                    {({open})=> (
-                        <>
-                            <Popover.Button>
-                                <Bars3Icon className='w-6 h-6'/>
-                            </Popover.Button>
-                            <Transition
+        <section id="mobile-sidebar" className="md:hidden">
+                <button onClick={()=> setSidebarOpen(true)}>
+                    <Bars3Icon className='w-5 h-5'/>
+                </button>
+                <Transition.Root show={sidebarOpen} as={Fragment}>
+                    <Dialog as="div" className="relative z-40 " onClose={setSidebarOpen}>
+                        <Transition.Child
+                            as={Fragment}
+                            enter="transition-opacity ease-linear duration-300"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="transition-opacity ease-linear duration-300"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <div className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+                        </Transition.Child>
+                        <div className="fixed top-20 inset-0 z-40 flex">
+                            <Transition.Child
                                 as={Fragment}
-                                enter="transition ease-out duration-200"
-                                enterFrom="opacity-0 translate-y-1"
-                                enterTo="opacity-100 translate-y-0"
-                                leave="transition ease-in duration-150"
-                                leaveFrom="opacity-100 translate-y-0"
-                                leaveTo="opacity-0 translate-y-1"
+                                enter="transition ease-in-out duration-300 transform"
+                                enterFrom="-translate-x-full"
+                                enterTo="translate-x-0"
+                                leave="transition ease-in-out duration-300 transform"
+                                leaveFrom="translate-x-0"
+                                leaveTo="-translate-x-full"
                             >
-                                <Popover.Panel className="absolute left-0 top-0 z-10 bg-slate-50">
-                                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                    {boulderLists.map((item)=> (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50"
+                                <Dialog.Panel className="relative flex w-full max-w-[85%] flex-1 flex-col overflow-y-auto overflow-y-auto bg-white pt-5 pb-4">
+                                    <Transition.Child
+                                        as={Fragment}
+                                        enter="ease-in-out duration-300"
+                                        enterFrom="opacity-0"
+                                        enterTo="opacity-100"
+                                        leave="ease-in-out duration-300"
+                                        leaveFrom="opacity-100"
+                                        leaveTo="opacity-0"
+                                    >
+                                        <div className="absolute top-0 right-0 pt-2">
+                                            <button
+                                                type="button"
+                                                className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                                                onClick={() => setSidebarOpen(false)}
                                             >
-                                            <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                            <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                                            </a>                                        
-                                    ))}
-                                </div>
-
-                                </Popover.Panel>
-                            </Transition>
-                        </>
-                    )}
-
-                </Popover>
-        </section>
+                                                <span className="sr-only">Close sidebar</span>
+                                                <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                    </Transition.Child>
+                                    <div className="pl-6">
+                                        {boulderLists.map((item)=> (
+                                            <a key={item.name}
+                                            href={item.href}
+                                            className="block rounded-md p-3 hover:bg-gray-200">
+                                                <p className='text-base text-gray-900'>{item.name}</p>
+                                                <p className='mt-1 text-sm text-gray-500'>{item.description}</p>
+                                            </a>
+                                        ))}
+                                        <Link href="/blog">
+                                            <a  className="block p-3 text-gray-900 text-base">Blog</a>
+                                        </Link>
+                                        <Link href="/about">
+                                            <a className="block p-3 text-gray-900">About</a>
+                                        </Link>
+                                    </div>
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </Dialog>
+                </Transition.Root>
+            </section>
         </div>
 )
 }

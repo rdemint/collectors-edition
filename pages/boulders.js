@@ -19,7 +19,7 @@ export default function Boulders({boulders}) {
                             <>
                                 <div id="boulder-card" key={boulder.name} className="relative border border-slate-200 bg-slate-50 rounded-xl p-2 flex flex-col my-2">
                                     { boulder.isCollectorsEdition ? 
-                                    <CheckBadgeIcon className="absolute left-1 top-1 z-10 text-slate-800 h-8 w-8 flex-none bg-yellow-400 rounded-xl"/>
+                                    <CheckBadgeIcon className="absolute z-10 left-1 top-1 text-slate-800 h-8 w-8 flex-none bg-yellow-400 rounded-xl"/>
                                     : <></>
                                     }
                                     <div className="flex flex-col items-center md:flex-row space-x-4">
