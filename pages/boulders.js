@@ -28,15 +28,26 @@ export default function Boulders({boulders}) {
                                         </div>
                                         <div class="flex flex-col">
                                             <div className='font-medium'>{boulder?.name}</div>
-                                            <div className='text-gray-700'>{boulder?.cebGrade}</div>
                                             <div className="text-gray-500">{boulder.area?.name}</div>
-                                            <div className="flex">
-                                                <div className="w-24">Guidebook</div>
-                                                <StarsBar earnedStars={boulder.guidebookStars} totalStars={4} />
+                                            <div className='flex my-2'>
+                                                <div className="flex flex-col w-24">
+                                                    <div className="w-24 text-gray-600">Guidebook</div>
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <StarsBar earnedStars={boulder.guidebookStars} totalStars={4} />
+                                                    <div className='text-slate-700'>{boulder?.guidebookGrade}</div>
+                                                </div>
+
                                             </div>
-                                            <div className="flex">
-                                                <div className="w-24">CEB</div>
-                                                <StarsBar earnedStars={boulder.cebStars} totalStars={7} />
+
+                                            <div className="flex my-2">
+                                                <div className="flex flex-col w-24">
+                                                    <div className="w-24 text-gray-600">CEB</div>
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <StarsBar earnedStars={boulder.cebStars} totalStars={7} />
+                                                    <div className='text-slate-700'>{boulder?.cebGrade}</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -45,7 +56,7 @@ export default function Boulders({boulders}) {
                                         {({open}) => (
                                             <>
                                                 <Disclosure.Button className="flex w-full rounded-lg justify-between px-4 py-2 text-left text-sm font-medium focus:outline-none focuse-visible:ring">
-                                                    <span>Details</span>
+                                                    <span className="text-slate-600">Details</span>
                                                     <ChevronUpIcon className={`${ open ? 'rotate-180 transform' : ''} h-5 w-5 text-slate-500`} />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm prose">
@@ -53,6 +64,7 @@ export default function Boulders({boulders}) {
                                                         <div className="w-36">Collectors Edition?</div>
                                                         <div>{boulder.isCollectorsEdition ? "Yes" : "No"}</div>
                                                     </div>
+                                                    <div></div>
                                                     <div className="">
                                                         <PortableText value={boulder.summary} />
                                                     </div>
