@@ -1,13 +1,11 @@
 const navigation = {
     main: [
-        { name: 'Blog', href: '/blog' },
         { name: 'About', href: '/about' },
-        { name: 'Guide', href: '/guide' },
     ],
     social: [
         {
             name: 'Instagram',
-            href: '#',
+            href: 'https://instagram.com/rainesmint',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -20,7 +18,7 @@ const navigation = {
         },
         {
             name: 'GitHub',
-            href: '#',
+            href: 'https://github.com/rdemint',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -36,7 +34,7 @@ const navigation = {
 
 export default function Footer() {
     return (
-        <footer className="bg-white">
+        <footer className="bg-white h-48">
             <div className="mx-auto max-w-7xl overflow-hidden py-8 px-4 sm:px-6 lg:px-8">
                 <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     {navigation.main.map((item) => (

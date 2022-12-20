@@ -17,24 +17,24 @@ export default function Boulders({boulders}) {
                         </div>
                         {boulders.map((boulder)=> (
                             <>
-                                <div id="boulder-card" key={boulder.name} className="relative border border-slate-200 bg-slate-50 rounded-xl p-2 flex flex-col my-2">
-                                    { boulder.isCollectorsEdition ? 
+                                <div id="boulder-card" key={boulder?.name} className="relative border border-slate-200 bg-slate-50 rounded-xl p-2 flex flex-col my-2">
+                                    { boulder?.isCollectorsEdition ? 
                                     <CheckBadgeIcon className="absolute z-10 left-1 top-1 text-slate-800 h-8 w-8 flex-none bg-yellow-400 rounded-xl"/>
                                     : <></>
                                     }
                                     <div className="flex flex-col items-center md:flex-row space-x-4">
                                         <div>
-                                            <Image src={boulder.imageUrl} width={560} height={560*9/16}/>
+                                            <Image src={boulder?.imageUrl} width={560} height={560*9/16}/>
                                         </div>
                                         <div class="flex flex-col">
                                             <div className='font-medium'>{boulder?.name}</div>
-                                            <div className="text-gray-500">{boulder.area?.name}</div>
+                                            <div className="text-gray-500">{boulder?.area?.name}</div>
                                             <div className='flex my-2'>
                                                 <div className="flex flex-col w-24">
                                                     <div className="w-24 text-gray-600">Guidebook</div>
                                                 </div>
                                                 <div className="flex flex-col">
-                                                    <StarsBar earnedStars={boulder.guidebookStars} totalStars={4} />
+                                                    <StarsBar earnedStars={boulder?.guidebookStars} totalStars={4} />
                                                     <div className='text-slate-700'>{boulder?.guidebookGrade}</div>
                                                 </div>
 
@@ -45,7 +45,7 @@ export default function Boulders({boulders}) {
                                                     <div className="w-24 text-gray-600">CEB</div>
                                                 </div>
                                                 <div className="flex flex-col">
-                                                    <StarsBar earnedStars={boulder.cebStars} totalStars={7} />
+                                                    <StarsBar earnedStars={boulder?.cebStars} totalStars={7} />
                                                     <div className='text-slate-700'>{boulder?.cebGrade}</div>
                                                 </div>
                                             </div>
@@ -62,13 +62,13 @@ export default function Boulders({boulders}) {
                                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm prose">
                                                     <div className="flex">
                                                         <div className="w-36">Collectors Edition?</div>
-                                                        <div>{boulder.isCollectorsEdition ? "Yes" : "No"}</div>
+                                                        <div>{boulder?.isCollectorsEdition ? "Yes" : "No"}</div>
                                                     </div>
                                                     <div></div>
                                                     <div className="">
-                                                        <PortableText value={boulder.summary} />
+                                                        <PortableText value={boulder?.summary} />
                                                     </div>
-                                                    <YouTubeEmbed embedUrl={boulder.video.split("=")[1]}/>
+                                                    <YouTubeEmbed embedUrl={boulder?.video.split("=")[1]}/>
                                                 </Disclosure.Panel>
                                             </>
                                         )}
@@ -95,10 +95,10 @@ export async function getStaticProps(context) {
     const query = '*[_type == "boulder"]{..., area->, "imageUrl": image.asset->url}'
     var boulders = await client.fetch(query) 
     boulders.sort((a, b) => {
-        if (gradeList.indexOf(a.cebGrade) < gradeList.indexOf(b.cebGrade)) {
+        if (gradeList.indexOf(a?.cebGrade) < gradeList.indexOf(b?.cebGrade)) {
             return -1
         }
-        if (gradeList.indexOf(a.cebGrade) > gradeList.indexOf(b.cebGrade)) {
+        if (gradeList.indexOf(a?.cebGrade) > gradeList.indexOf(b?.cebGrade)) {
             return 1
         }
         else {
