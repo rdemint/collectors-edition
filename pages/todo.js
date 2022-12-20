@@ -57,9 +57,9 @@ export default function Todo() {
     ]
     return (
         <div className="flex flex-col items-center px-4">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mt-6">
                 <h2 className="text-4xl text-center">The todo list</h2>
-                <p className="text-gray-700 prose">These boulders I am considering seeking out.  Let's team up and get them done!</p>
+                <p className="text-gray-700 prose">These are some boulders I am considering seeking out.  Let&apos;s team up and get them done!</p>
                 <div className="my-8">
                     { todos.map((area)=> (
                         <div key={area.name} className="py-4">

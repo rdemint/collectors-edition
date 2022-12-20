@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/s
 
 const boulderLists = [
     {name: 'Climbed', description: 'All climbed boulders in the database', href: "/boulders"},
-    {name: 'To-do', description: 'Boulders suspected to be worth seeking out', href: "/to-do"},
+    {name: 'To-do', description: 'Boulders suspected to be worth seeking out', href: "/todo"},
 ]
 
 function classNames(...classes) {

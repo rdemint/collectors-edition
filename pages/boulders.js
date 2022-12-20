@@ -11,9 +11,10 @@ export default function Boulders({boulders}) {
     return (
             <div className="w-full flex flex-col items-center">
                 <div className="max-w-3xl flex flex-col items-center px-2">
-                        <h2 className="text-2xl text-zinc-800 my-2 text-center">A list of all climbed boulders in the database</h2>
+                        <h2 className="text-2xl text-zinc-800 my-2 mt-6 text-center">A list of all climbed boulders in the database</h2>
                         <div className="my-6 px-6 space-y-4">
                             <p className="text-zinc-700">I am stuck on the idea that the four star scale is really insufficient to differentiate the wide range of quality in the wild.  I offer my take here in a special CEB seven star scale, too.</p>
+                            <p className="text-zinc-700">This isn&apos;t a list of everything I&apos;ve climbed, but these are boulders I found notable, for better or worse.</p>
                         </div>
                         {boulders.map((boulder)=> (
                             <>
@@ -24,7 +25,7 @@ export default function Boulders({boulders}) {
                                     }
                                     <div className="flex flex-col items-center md:flex-row space-x-4">
                                         <div>
-                                            <Image src={boulder?.imageUrl} width={560} height={560*9/16}/>
+                                            <Image src={boulder?.imageUrl} width={560} height={560*9/16} alt="picture of a rock climber"/>
                                         </div>
                                         <div class="flex flex-col">
                                             <div className='font-medium'>{boulder?.name}</div>
