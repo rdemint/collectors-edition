@@ -28,20 +28,16 @@ export default function Home() {
                   <a href="/blog" className="rounded-md border border-slate-700 px-4 py-2 w-48 text-center text-slate-300 bg-slate-800 hover:shadow-md">Blog</a>
                   <p className="text-gray-500 ">Expanded and freeform thoughts</p>
               </div>                                                                    
-                                                                                        
-                  <div className="flex flex-col items-center">
-                      <a href="/docs" className="rounded-md border border-slate-700 px-4 py-2 w-48 text-center text-slate-300 bg-slate-800 hover:shadow-md">Docs</a>
-                  <p className="text-gray-500">Mini-guides on areas and boulders</p>
-                  </div>
               </div>
               <div className="my-6 px-6 max-w-3xl space-y-4">
-                  <p className="text-zinc-700">"Ever since I began cutting my teeth on Mt. Lemmon looking for and developing boulders,
-                      I've developed an appreciation for just how rare some boulders really are.</p>
+                  <p className="text-zinc-700">"Ever since I began cutting my teeth on Mt. Lemmon in Southern Arizona, looking for and developing boulders,
+                      I've developed an appreciation for just how rare some boulders really are.<br/> <br/> These rare, usually 'four star' boulders are not four times better than one star boulders, but maybe 10 or 100 times better. It has become my mission to seek out these boulders, which I have come to call collectors edition.</p>
+                      
                   <p className="text-zinc-700">Seeking out what I deemed to be collectors edition has led me over many miles.  Here I reflect and share about these adventures, which are now mostly based around the greater Tahoe area."
                   </p>
               </div>
               <Container>
-                  <h3 className="text-2xl text-center">What is collectors edition?</h3>
+                  <h3 className="text-2xl text-center">What makes a collectors edition boulder?</h3>
                   {criteria.map((c) => (
                       <div className="flex items-center space-x-6 h-24 m-4 bg-slate-50 rounded-xl px-4">
                           <CheckBadgeIcon className="text-slate-800 h-8 w-8 flex-none bg-yellow-400 rounded-xl"/>

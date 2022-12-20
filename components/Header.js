@@ -15,9 +15,6 @@ return(
             <Link href="/blog">
                 <a  className="px-3 py-1 hover:text-primary-900 hover:underline underline-offset-8 decoration-accent-900">Blog</a>
             </Link>
-            <Link href="/docs">
-                <a className="px-3 py-1 hover:text-primary-900 hover:underline underline-offset-8 decoration-accent-900">Guide</a>
-            </Link>
             <Link href="/about">
                 <a className="px-3 py-1 hover:text-primary-900 hover:underline underline-offset-8 decoration-accent-900">About</a>
             </Link>
