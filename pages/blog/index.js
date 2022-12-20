@@ -28,7 +28,7 @@ export default function BlogHome({posts}) {
                                     <p className="pt-1 text-sm text-gray-600">{post.summary}</p>
                                     <div class="flex space-x-2 mt-2">
                                     {post.tags.map(
-                                        (tag) => (<div className="text-xs text-gray-700" key={tag}>'{tag}'</div>)
+                                        (tag) => (<div className="text-xs text-gray-700" key={tag}>{tag}</div>)
                                         )}
                                     </div>
                                     <div className="text-xs text-gray-500 pt-2">{post.date}</div>
