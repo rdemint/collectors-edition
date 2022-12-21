@@ -18,7 +18,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Raines Demint</title>
-        <meta name="description" content="Medical device quality management systems" />
+        <meta name="description" content="Boulders worth collecting" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -29,7 +29,7 @@ export default function Home() {
                 <Link href="/boulders" >
                   <a className="rounded-md border border-slate-700 px-4 py-2 w-48 text-center text-slate-300 bg-slate-800 hover:shadow-md">Featured Boulders</a>
                 </Link>
-                  <p className="text-gray-500 ">What I&apos;ve found notable and my consensus on grades and quality.</p>
+                  <p className="text-gray-500 px-4">What I&apos;ve found notable and my consensus on grades and quality.</p>
               </div>                                                                    
               <div className="flex flex-col items-center" >
                 <Link href="/blog">
