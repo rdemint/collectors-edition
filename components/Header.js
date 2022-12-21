@@ -136,10 +136,10 @@ return(
                                             </a>
                                         ))}
                                         <Link href="/blog">
-                                            <a  className="block p-3 text-gray-900 text-base">Blog</a>
+                                            <a  onClick={()=> setSidebarOpen(false)} className="block p-3 text-gray-900 text-base">Blog</a>
                                         </Link>
                                         <Link href="/about">
-                                            <a className="block p-3 text-gray-900">About</a>
+                                            <a onClick={()=> setSidebarOpen(false)} className="block p-3 text-gray-900">About</a>
                                         </Link>
                                     </div>
                                 </Dialog.Panel>
